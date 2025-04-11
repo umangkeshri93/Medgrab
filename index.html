@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breakout Screener</title>
+    <title>NSE F&O Breakout Screener</title>
     <style>
         body {
             background-color: #121212;
@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
         }
-
         header {
             background-color: #1f1f1f;
             padding: 1rem;
@@ -20,43 +19,47 @@
             font-size: 1.8rem;
             color: #00ffcc;
         }
-
         .container {
             padding: 1rem;
         }
-
+        button {
+            background-color: #00ffcc;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #00ddb0;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 1rem;
         }
-
         th, td {
             padding: 0.8rem;
             border-bottom: 1px solid #333;
             text-align: center;
         }
-
         th {
             background-color: #272727;
             color: #00ffcc;
         }
-
         tr:hover {
             background-color: #1a1a1a;
         }
-
         @media (max-width: 600px) {
             table, thead, tbody, th, td, tr {
                 display: block;
             }
-
             th {
                 position: sticky;
                 top: 0;
                 background-color: #272727;
             }
-
             td {
                 padding: 1rem;
                 border: none;
@@ -65,12 +68,10 @@
                 position: relative;
                 padding-left: 50%;
             }
-
             td::before {
                 position: absolute;
                 left: 1rem;
                 content: attr(data-label);
-                text-align: left;
                 color: #888;
             }
         }
@@ -79,10 +80,12 @@
 <body>
 
 <header>
+    <img src="image.png" alt="Breakout Screener Logo" style="max-width: 250px; display: block; margin: 0 auto 10px;">
     NSE F&O Breakout Screener
 </header>
 
 <div class="container">
+    <button onclick="location.reload()">Refresh Data</button>
     <table>
         <thead>
             <tr>
@@ -94,13 +97,13 @@
         </thead>
         <tbody>
             <tr>
-                <td data-label="Stock">NIFTY</td>
+                <td data-label="Stock"><a href="https://www.tradingview.com/symbols/NSE-NIFTY/" target="_blank" style="color:#00ffcc;">NIFTY</a></td>
                 <td data-label="Breakout Type">High Breakout</td>
                 <td data-label="Price">22450</td>
                 <td data-label="Time">9:20 AM</td>
             </tr>
             <tr>
-                <td data-label="Stock">BANKNIFTY</td>
+                <td data-label="Stock"><a href="https://www.tradingview.com/symbols/NSE-BANKNIFTY/" target="_blank" style="color:#00ffcc;">BANKNIFTY</a></td>
                 <td data-label="Breakout Type">Low Breakdown</td>
                 <td data-label="Price">47800</td>
                 <td data-label="Time">9:18 AM</td>
